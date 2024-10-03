@@ -32,10 +32,10 @@ test:
     - konlpy
   commands:
     - pip check
-    - pytest
+    - pytest -k "(not test_mecab.py)"
   requires:
     - pip
-    - pytest -k "(not test_mecab.py)"
+    - pytest 
   source_files:
     - test
 
