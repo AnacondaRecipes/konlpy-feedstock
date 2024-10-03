@@ -1,18 +1,18 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "konlpy" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 1b576aef07d094706e4bae446ab835855abbe806647fe861243c378482eb79c6
 
 build:
-  number: 0
+  skip: True                                    # [py<38 or py>=312]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  number: 0
 
 requirements:
   host:
@@ -20,26 +20,27 @@ requirements:
     - pip
   run:
     - python
+    - jpype1 >=0.7.0
+    - lxml >=4.1.0
+    - numpy >=1.6
 
 test:
   imports:
-    - {{ name.replace('-', '.') }}
-  requires:
-    - pip
+    - konlpy
   commands:
     - pip check
+    - pytest
+  requires:
+    - pip
+    - pytest
+  source_files:
+    - test
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
-  description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+  home: http://konlpy.org
+  license: GPL-3.0-or-later
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
-    - Jrice1317
+    - mohamedlarbisentissi
