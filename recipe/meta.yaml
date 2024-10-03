@@ -35,7 +35,7 @@ test:
     - pytest
   requires:
     - pip
-    - pytest -k (not test_mecab.py)
+    - pytest -k "(not test_mecab.py)"
   source_files:
     - test
 
