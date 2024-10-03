@@ -18,8 +18,11 @@ requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
   run:
     - python
+    - openjdk
     - jpype1 >=0.7.0
     - lxml >=4.1.0
     - numpy >=1.6
@@ -38,8 +41,13 @@ test:
 
 about:
   home: http://konlpy.org
+  doc_url: https://konlpy.org/en/latest/
+  dev_url: https://github.com/konlpy/konlpy
   license: GPL-3.0-or-later
   license_file: LICENSE
+  license_family: GPL3
+  summary: Python package for Korean natural language processing
+  description: KoNLPy is a Python package for natural language processing of the Korean language.
 
 extra:
   recipe-maintainers:
