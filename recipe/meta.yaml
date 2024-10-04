@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 1b576aef07d094706e4bae446ab835855abbe806647fe861243c378482eb79c6
-  patches:
-    - patches/0001-remove-downloader.patch
 
 build:
   skip: True                                    # [py<38 or py>=312 or s390x or win]
@@ -17,9 +15,6 @@ build:
   number: 0
 
 requirements:
-  build:
-    - patch                                     # [not win]
-    - m2-patch                                  # [win]
   host:
     - python
     - pip
