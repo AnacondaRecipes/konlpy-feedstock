@@ -32,16 +32,17 @@ test:
     - konlpy
   commands:
     - pip check
-    - pytest -k "(not test_mecab.py)"
+    # Ignoring Mecab-Ko testing because it's an optional dependency that is not included and not packaged
+    - pytest -vv --ignore=test/test_mecab.py
   requires:
     - pip
-    - pytest 
+    - pytest
   source_files:
     - test
 
 about:
   home: http://konlpy.org
-  doc_url: https://konlpy.org/en/latest/
+  doc_url: https://konlpy.org
   dev_url: https://github.com/konlpy/konlpy
   license: GPL-3.0-or-later
   license_file: LICENSE
