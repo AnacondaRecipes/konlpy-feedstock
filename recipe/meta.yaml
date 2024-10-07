@@ -10,7 +10,7 @@ source:
   sha256: 1b576aef07d094706e4bae446ab835855abbe806647fe861243c378482eb79c6
 
 build:
-  skip: True                                    # [py<38 or py>=312 or s390x or win]
+  skip: True                                    # [py<38 or py>=312 or s390x]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
