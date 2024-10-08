@@ -10,6 +10,8 @@ source:
   sha256: 1b576aef07d094706e4bae446ab835855abbe806647fe861243c378482eb79c6
 
 build:
+  # Skipping windows since CONTRIBUTING-en.rst filename trailing space crashes conda-build
+  # Skipping linux-s390x since there's no openjdk built for it
   skip: True                                    # [py<38 or py>=312 or s390x or win]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
