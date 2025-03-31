@@ -3,3 +3,6 @@ build_env_vars:
 
 upload_channels:
   - sfe1ed40
+
+channels:
+  - https://staging.continuum.io/prefect/fs/jpype1-feedstock/pr6/cac3e93

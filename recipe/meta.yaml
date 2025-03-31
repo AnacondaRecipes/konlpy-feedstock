@@ -30,7 +30,6 @@ test:
   requires:
     - pip
     - pytest
-    - openjdk
   source_files:
     - test
   commands:
