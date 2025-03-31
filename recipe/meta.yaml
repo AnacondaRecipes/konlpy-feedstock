@@ -10,6 +10,8 @@ source:
   sha256: 1b576aef07d094706e4bae446ab835855abbe806647fe861243c378482eb79c6
 
 build:
+  # Missing jpype1 for s390x
+  skip: True  # [s390x]
   number: 0
   skip: True  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
