@@ -1,25 +1,24 @@
 {% set name = "konlpy" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.0+5_1341e33" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 1b576aef07d094706e4bae446ab835855abbe806647fe861243c378482eb79c6
+  # 0.6.0 has an error in filename "CONTRIBUTING-en.rst " (contains trailing whitespace)
+  # which makes conda unable to extract it on windows:
+  # The system cannot find the file specified: '...\\konlpy-0.6.0\\CONTRIBUTING-en.rst '
+  # This was fixed on master branch by this commit 1341e33:
+  # https://github.com/konlpy/konlpy/commit/1341e33bab045d05e6a1ecc56e729f59c6b80604
+  # which is not included in the release.
+  git_url: https://github.com/konlpy/konlpy.git
+  git_rev: 1341e33
 
 build:
   number: 0
   # Missing jpype1 for s390x
   skip: True  # [s390x]
-  # 0.6.0 has an error in filename "CONTRIBUTING-en.rst " (contains trailing whitespace)
-  # which makes conda unable to extract it on windows:
-  # The system cannot find the file specified: '...\\konlpy-0.6.0\\CONTRIBUTING-en.rst '
-  # This was fixed on master branch by this commit
-  # https://github.com/konlpy/konlpy/commit/1341e33bab045d05e6a1ecc56e729f59c6b80604
-  # but not pulled into a release yet.
-  skip: True  # [win]
   skip: True  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
