@@ -1,13 +1,13 @@
-About <pkg_name>-feedstock
+About konlpy-feedstock
 =======================
 
 Feedstock license: [BSD-3-Clause](LICENSE)
 
-Home: <home_url>
+Home: https://konlpy.org
 
-Package license: <pkg_license>
+Package license: GPL-3.0-or-later
 
-Summary: <pkg_summary>
+Summary: KoNLPy is a Python package for natural language processing of the Korean language.
 
 
 Current release info
@@ -15,19 +15,19 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-<pkg_name>-green.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-konlpy-green.svg)](https://anaconda.org/anaconda/konlpy) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/konlpy.svg)](https://anaconda.org/anaconda/konlpy) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/konlpy.svg)](https://anaconda.org/anaconda/konlpy) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/konlpy.svg)](https://anaconda.org/anaconda/konlpy) |
 
-Installing <pkg_name>
+Installing konlpy
 ==================
 
-Installing `<pkg_name>` from the main channel can be achieved by:
+Installing `konlpy` from the main channel can be achieved by:
 
 ```
-conda install <pkg_name>
+conda install konlpy
 ```
 
-It is possible to list all of the versions of `<pkg_name>` available on your platform with `conda`:
+It is possible to list all of the versions of `konlpy` available on your platform with `conda`:
 
 ```
-conda search <pkg_name>
+conda search konlpy
 ```
